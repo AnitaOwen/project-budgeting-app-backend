@@ -5,7 +5,7 @@ function validateForm(req, res, next){
 
     if (
         !itemName ||
-        !amount ||
+        amount == 0 ||
         !date ||
         !from ||
         !category ||
