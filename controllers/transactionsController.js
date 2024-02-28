@@ -1,5 +1,22 @@
 const express = require("express")
 
+function validateForm(req, res, next){
+    const { itemName, amount, date, from, category, transactionType } = req.body
+
+    if (
+        !itemName ||
+        !amount ||
+        !date ||
+        !from ||
+        !category ||
+        !transactionType
+    ) {
+        return res.status(400).json({ message: "Invalid Inputs" })
+    } else {
+        next()
+    }
+}
+
 const transactions = express.Router()
 let transactionsArray = require("../models/transaction.model.js")
 
@@ -13,9 +30,12 @@ transactions.get("/:id", (req, res) => {
     res.json({ transaction })
 })
 
-transactions.post("/", (req, res) => {
+transactions.post("/", validateForm, (req, res) => {
     const newId = transactionsArray[transactionsArray.length -1].id + 1
     req.body.id = newId
+    if(req.body.transactionType === "withdrawal"){
+        req.body.amount = +req.body.amount * -1
+      }
     transactionsArray.push(req.body)
     res.json({ transactions: transactionsArray })
 })
