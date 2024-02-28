@@ -6,7 +6,7 @@ module.exports = [
     date: "2024-02-01",
     from: "Employer",
     category: "Income",
-    transactionType: "deposit"
+    transactionType: "Deposit"
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ module.exports = [
     date: "2024-02-05",
     from: "Landlord",
     category: "Housing",
-    transactionType: "withdrawal"
+    transactionType: "Withdrawal"
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ module.exports = [
     date: "2024-02-10",
     from: "Grocery Store",
     category: "Food",
-    transactionType: "withdrawal"
+    transactionType: "Withdrawal"
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ module.exports = [
     date: "2024-02-15",
     from: "Bank",
     category: "Savings",
-    transactionType: "deposit"
+    transactionType: "Deposit"
   },
   {
     id: 5,
@@ -42,7 +42,7 @@ module.exports = [
     date: "2024-02-20",
     from: "Utility Company",
     category: "Utilities",
-    transactionType: "withdrawal"
+    transactionType: "Withdrawal"
   },
   {
     id: 6,
@@ -51,7 +51,7 @@ module.exports = [
     date: "2024-02-25",
     from: "Restaurant",
     category: "Entertainment",
-    transactionType: "withdrawal"
+    transactionType: "Withdrawal"
   },
   {
     id: 7,
@@ -60,7 +60,7 @@ module.exports = [
     date: "2024-02-03",
     from: "Client",
     category: "Income",
-    transactionType: "deposit"
+    transactionType: "Deposit"
   },
   {
     id: 8,
@@ -69,7 +69,7 @@ module.exports = [
     date: "2024-02-08",
     from: "Internet Provider",
     category: "Utilities",
-    transactionType: "withdrawal"
+    transactionType: "Withdrawal"
   },
   {
     id: 9,
@@ -78,7 +78,7 @@ module.exports = [
     date: "2024-02-12",
     from: "Electronics Store",
     category: "Personal",
-    transactionType: "withdrawal"
+    transactionType: "Withdrawal"
   },
   {
     id: 10,
@@ -87,6 +87,6 @@ module.exports = [
     date: "2024-02-18",
     from: "Gift Shop",
     category: "Gifts",
-    transactionType: "withdrawal"
+    transactionType: "Withdrawal"
   }
 ];
