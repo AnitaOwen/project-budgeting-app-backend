@@ -13,4 +13,13 @@ transactions.get("/:id", (req, res) => {
     res.json({ transaction })
 })
 
+transactions.post("/", (req, res) => {
+    const newId = transactionsArray[transactionsArray.length -1].id + 1
+    req.body.id = newId
+    transactionsArray.push(req.body)
+    res.json({ transactions: transactionsArray })
+})
+
+
+
 module.exports = transactions;

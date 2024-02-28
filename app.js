@@ -17,4 +17,9 @@ app.get("/", (req, res) => {
     res.send("Welcome")
 })
 
+// 404 PAGE
+app.get("*", (req, res) => {
+    res.json({ error: "Page not found" });
+  });
+
 module.exports = app;
