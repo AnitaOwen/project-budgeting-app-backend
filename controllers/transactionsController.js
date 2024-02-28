@@ -46,6 +46,15 @@ transactions.delete("/:id", (req, res) => {
     res.json({ transactions: transactionsArray })
 })
 
+transactions.put("/:id", validateForm, (req, res) => {
+    const { id } = req.params
+    const transactionIndex = transactionsArray.findIndex((transaction) => transaction.id === +id)
+    if(transactionIndex > -1){
+        transactionsArray[transactionIndex] = req.bodyres.json({ transactions: transactionsArray })
+    } else {
+        res.status(400).json({ message: "Transaction not found."})
+    }
+})
 
 
 module.exports = transactions;
