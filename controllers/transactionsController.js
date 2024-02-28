@@ -46,11 +46,15 @@ transactions.delete("/:id", (req, res) => {
     res.json({ transactions: transactionsArray })
 })
 
-transactions.put("/:id", validateForm, (req, res) => {
+transactions.put("/:id", (req, res) => {
     const { id } = req.params
     const transactionIndex = transactionsArray.findIndex((transaction) => transaction.id === +id)
     if(transactionIndex > -1){
-        transactionsArray[transactionIndex] = req.bodyres.json({ transactions: transactionsArray })
+        if(req.body.transactionType === "withdrawal"){
+            req.body.amount = +req.body.amount * -1
+          }
+        transactionsArray[transactionIndex] = req.body
+        res.json({ transactions: transactionsArray })
     } else {
         res.status(400).json({ message: "Transaction not found."})
     }
