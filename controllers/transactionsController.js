@@ -20,6 +20,12 @@ transactions.post("/", (req, res) => {
     res.json({ transactions: transactionsArray })
 })
 
+transactions.delete("/:id", (req, res) => {
+    const { id } = req.params
+    transactionsArray = transactionsArray.filter((transaction) => transaction.id !== +id)
+    res.json({ transactions: transactionsArray })
+})
+
 
 
 module.exports = transactions;
