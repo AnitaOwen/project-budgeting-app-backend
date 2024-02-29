@@ -42,6 +42,8 @@ transactions.post("/", validateForm, (req, res) => {
 
     if(req.body.transactionType === "withdrawal"){
         req.body.amount = +req.body.amount * -1
+    } else {
+        req.body.amount = +req.body.amount
     }
 
     transactionsArray.push(req.body)
