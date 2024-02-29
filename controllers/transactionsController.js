@@ -61,6 +61,12 @@ transactions.put("/:id", (req, res) => {
         if(req.body.transactionType === "withdrawal"){
             req.body.amount = +req.body.amount * -1
           }
+        const formattedFrom = req.body.from.split(' ').map((word) => word[0].toUpperCase() + word.slice(1).toLowerCase())
+        req.body.from = formattedFrom.join(" ")
+
+        const formattedItemName = req.body.itemName.split(' ').map((word) => word[0].toUpperCase() + word.slice(1).toLowerCase() + " ")
+        req.body.itemName = formattedItemName.join(' ')
+
         transactionsArray[transactionIndex] = req.body
         res.json({ transactions: transactionsArray })
     } else {
