@@ -33,9 +33,17 @@ transactions.get("/:id", (req, res) => {
 transactions.post("/", validateForm, (req, res) => {
     const newId = transactionsArray[transactionsArray.length -1].id + 1
     req.body.id = newId
+
+    const formattedItemName = req.body.itemName.split(' ').map((word) => word[0].toUpperCase() + word.slice(1).toLowerCase() + " ")
+    req.body.itemName = formattedItemName.join(' ')
+
+    const formattedFrom = req.body.from.split(' ').map((word) => word[0].toUpperCase() + word.slice(1).toLowerCase())
+    req.body.from = formattedFrom.join(" ")
+
     if(req.body.transactionType === "withdrawal"){
         req.body.amount = +req.body.amount * -1
-      }
+    }
+
     transactionsArray.push(req.body)
     res.json({ transactions: transactionsArray })
 })
