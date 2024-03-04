@@ -40,7 +40,7 @@ transactions.post("/", validateForm, (req, res) => {
     const formattedFrom = req.body.from.split(' ').map((word) => word[0].toUpperCase() + word.slice(1).toLowerCase())
     req.body.from = formattedFrom.join(" ")
 
-    if(req.body.transactionType === "withdrawal"){
+    if(req.body.transactionType === "Withdrawal"){
         req.body.amount = +req.body.amount * -1
     } else {
         req.body.amount = +req.body.amount
