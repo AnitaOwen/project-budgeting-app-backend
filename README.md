@@ -1,4 +1,4 @@
-# Budgeting App Frontend
+# Budgeting App
 
 BUGETR is a React-based budgeting application designed to help users manage their finances effectively. With BUGETR, users can track their transactions, categorize them, and visualize their budgeting data for better financial planning.
 
